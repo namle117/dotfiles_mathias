@@ -143,9 +143,6 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # SSD-specific tweaks                                                         #
 ###############################################################################
 
-# Disable local Time Machine snapshots
-sudo tmutil disablelocal
-
 # Disable hibernation (speeds up entering sleep mode)
 sudo pmset -a hibernatemode 0
 
@@ -175,7 +172,7 @@ defaults -currentHost write NSGlobalDomain com.apple.trackpad.trackpadCornerClic
 defaults -currentHost write NSGlobalDomain com.apple.trackpad.enableSecondaryClick -bool true
 
 # Disable “natural” (Lion-style) scrolling
-defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
+# defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
 # Increase sound quality for Bluetooth headphones/headsets
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
@@ -199,15 +196,15 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # Set language and text formats
 # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
 # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-defaults write NSGlobalDomain AppleLanguages -array "en" "nl"
-defaults write NSGlobalDomain AppleLocale -string "en_GB@currency=EUR"
-defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-defaults write NSGlobalDomain AppleMetricUnits -bool true
+defaults write NSGlobalDomain AppleLanguages -array "en"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
+defaults write NSGlobalDomain AppleMetricUnits -bool false
 
 # Hide language menu in the top right corner of the boot screen
 sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool false
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-sudo systemsetup -settimezone "Europe/Brussels" > /dev/null
+#sudo systemsetup -settimezone "America/San_Francisco" > /dev/null
 
 # Stop iTunes from responding to the keyboard media keys
 #launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist 2> /dev/null
@@ -660,7 +657,7 @@ defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
-hash tmutil &> /dev/null && sudo tmutil disablelocal
+# hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 ###############################################################################
 # Activity Monitor                                                            #
@@ -877,7 +874,6 @@ for app in "Activity Monitor" \
 	"Dock" \
 	"Finder" \
 	"Google Chrome" \
-	
 	"Mail" \
 	"Messages" \
 	"Opera" \
