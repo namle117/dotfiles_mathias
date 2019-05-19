@@ -67,10 +67,10 @@ brew install postgresql@9.5
 
 # Install more recent versions of some OS X tools.
 brew install vim --override-system-vi
-brew install homebrew/dupes/grep
-brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
-brew install homebrew/php/php55 --with-gmp
+# brew install homebrew/dupes/grep
+# brew install homebrew/dupes/openssh
+# brew install homebrew/dupes/screen
+# brew install homebrew/php/php55 --with-gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -101,7 +101,7 @@ brew install tcpflow
 brew install tcpreplay
 brew install tcptrace
 brew install ucspi-tcp # `tcpserver` etc.
-brew install homebrew/x11/xpdf
+# brew install homebrew/x11/xpdf
 brew install xz
 
 # Install other useful binaries.
@@ -187,6 +187,7 @@ brew cask install --appdir="/Applications" dropbox
 brew cask install --appdir="/Applications" skype
 brew cask install --appdir="/Applications" slack
 brew cask install --appdir="/Applications" transmission # Torrent
+brew cask install --appdir="/Applications" wavebox
 
 # Utility casks
 brew cask install --appdir="/Applications" a-better-finder-attributes
@@ -212,7 +213,7 @@ brew cask install --appdir="/Applications" whatsapp
 #brew cask install --appdir="/Applications" inkscape
 
 # Rappler casks
-brew cask install --appdir="/Applications" basecamp
+# brew cask install --appdir="/Applications" basecamp
 
 # # Install Docker, which requires virtualbox
 # brew install docker
