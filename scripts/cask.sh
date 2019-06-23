@@ -46,3 +46,4 @@ brew cask install --appdir="/Applications" pgadmin4
 
 # Android development
 # brew cask install --appdir="/Applications" android-studio
+brew cleanup

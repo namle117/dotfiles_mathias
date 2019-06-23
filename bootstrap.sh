@@ -9,8 +9,11 @@ function doIt() {
 		--exclude ".DS_Store" \
 		--exclude ".osx" \
 		--exclude "bootstrap.sh" \
-		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
+		--exclude "macos.sh" \
+		--exclude "macosprep.sh" \
+		--exclude "README.md" \
+		--exclude "scripts/" \
 		-avh --no-perms . ~;
 	source ~/.bash_profile;
 }

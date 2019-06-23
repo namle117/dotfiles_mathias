@@ -14,7 +14,7 @@ BREW_PREFIX=$(brew --prefix)
 # Install GNU core utilities (those that come with macOS are outdated).
 # Don’t forget to add `$(brew --prefix coreutils)/libexec/gnubin` to `$PATH`.
 brew install coreutils
-ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
+# ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 
 # Install some other useful utilities like `sponge`.
 brew install moreutils
@@ -33,11 +33,15 @@ if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
 
-# Install `wget` with IRI support.
-brew install wget
+# install Java
+brew tap homebrew/cask-versions
+brew tap adoptopenjdk/openjdk
 
-# Install GnuPG to enable PGP-signing commits.
-brew install gnupg
+brew cask install java
+# brew cask install adoptopenjdk
+
+# Install `wget` with IRI support. 
+brew install wget
 
 # Install more recent versions of some macOS tools.
 brew install vim
@@ -46,6 +50,9 @@ brew install openssh
 brew install screen
 brew install php
 brew install gmp
+
+# Install GnuPG to enable PGP-signing commits.
+brew install gnupg
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -87,6 +94,7 @@ brew install git
 brew install git-lfs
 brew install git-flow
 brew install git-extras
+
 # brew install hub
 brew install imagemagick # --with-webp
 brew install lua
@@ -113,9 +121,16 @@ brew link libxml2 --force
 brew link libxslt --force
 
 # Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
-
-
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown
+brew cask install quicklook-json
+brew cask install qlprettypatch
+brew cask install quicklook-csv
+brew cask install betterzip
+brew cask install qlimagesize
+brew cask install webpquicklook
+brew cask install suspicious-package
 
 # Remove outdated versions from the cellar.
 brew cleanup
