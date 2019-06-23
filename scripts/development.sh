@@ -52,7 +52,7 @@ brew install cmake
     brew install postgresql
 
     # Start up the services
-    # brew services start postgresql
+    brew services start postgresql
     brew cask install --appdir="/Applications" pgadmin4
 
 # Mojave changed the location of header files necessary for compiling C extensions
