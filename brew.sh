@@ -21,25 +21,26 @@ brew install moreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, `g`-prefixed.
 brew install findutils
 # Install GNU `sed`, overwriting the built-in `sed`.
-brew install gnu-sed --with-default-names
-# Install Bash 4.
+brew install gnu-sed
+
+# # Install Bash 4.
 brew install bash
 brew install bash-completion2
 
-# Switch to using brew-installed bash as default shell
+# # Switch to using brew-installed bash as default shell
 if ! fgrep -q "${BREW_PREFIX}/bin/bash" /etc/shells; then
   echo "${BREW_PREFIX}/bin/bash" | sudo tee -a /etc/shells;
   chsh -s "${BREW_PREFIX}/bin/bash";
 fi;
 
 # Install `wget` with IRI support.
-brew install wget --with-iri
+brew install wget
 
 # Install GnuPG to enable PGP-signing commits.
 brew install gnupg
 
 # Install more recent versions of some macOS tools.
-brew install vim --with-override-system-vi
+brew install vim
 brew install grep
 brew install openssh
 brew install screen
@@ -80,21 +81,41 @@ brew install xz
 
 # Install other useful binaries.
 brew install ack
+brew install dark-mode
 #brew install exiv2
 brew install git
 brew install git-lfs
-brew install imagemagick --with-webp
+brew install git-flow
+brew install git-extras
+# brew install hub
+brew install imagemagick # --with-webp
 brew install lua
 brew install lynx
 brew install p7zip
 brew install pigz
 brew install pv
 brew install rename
+brew install rhino
 brew install rlwrap
+brew install speedtest_cli
 brew install ssh-copy-id
 brew install tree
 brew install vbindiff
+brew install webkit2png
 brew install zopfli
+brew install pkg-config libffi
+brew install pandoc
+
+# Lxml and Libxslt
+brew install libxml2
+brew install libxslt
+brew link libxml2 --force
+brew link libxslt --force
+
+# Install developer friendly quick look plugins; see https://github.com/sindresorhus/quick-look-plugins
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql qlimagesize webpquicklook suspicious-package
+
+
 
 # Remove outdated versions from the cellar.
 brew cleanup
